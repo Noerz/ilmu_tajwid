@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:ilmu_tajwid/app/core/values/app_text.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -9,14 +10,20 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('HomeView'),
-        centerTitle: true,
-      ),
-      body: const Center(
-        child: Text(
-          'HomeView is working',
-          style: TextStyle(fontSize: 20),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              width: 100,
+              height: 50,
+              decoration: BoxDecoration(
+                  color: Colors.green, borderRadius: BorderRadius.circular(8)),
+              child: Text(
+                "BELAJAR ILMU TAJWID",
+                style: tittle,
+              ),
+            ),
+          ],
         ),
       ),
     );
