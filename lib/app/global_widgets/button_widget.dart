@@ -9,28 +9,32 @@ class CustomButton extends StatelessWidget {
     required this.title,
     required this.navigation,
     required this.color,
+    
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 200,
-      height: 50,
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(
-          color: Colors.black, // Warna garis tepi
-          width: 2, // Lebar garis tepi
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(32, 16, 32, 0),
+      child: Container(
+        width: double.infinity,
+        height: 75,
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(
+            color: Colors.black, // Warna garis tepi
+            width: 2, // Lebar garis tepi
+          ),
         ),
-      ),
-      child: TextButton(
-        onPressed: navigation,
-        child: Text(
-          title,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 16,
+        child: TextButton(
+          onPressed: navigation,
+          child: Text(
+            title,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+            ),
           ),
         ),
       ),
