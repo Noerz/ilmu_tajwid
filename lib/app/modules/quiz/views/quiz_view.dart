@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:ilmu_tajwid/app/global_widgets/button_widget.dart';
 import 'package:ilmu_tajwid/app/global_widgets/progress_timer.dart';
 import 'package:ilmu_tajwid/app/global_widgets/question_card.dart';
-
 import '../controllers/quiz_controller.dart';
 
 class QuizView extends GetView<QuizController> {
@@ -12,20 +10,11 @@ class QuizView extends GetView<QuizController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // extendBodyBehindAppBar: true,
-      // appBar: AppBar(
-      //   elevation: 0,
-      //   backgroundColor: Colors.transparent,
-      // ),
       body: Stack(
         alignment: Alignment.topCenter,
         children: [
           Container(
-            decoration: const BoxDecoration(
-                // image: DecorationImage(
-                //     image: AssetImage('assets/images/here.jpg'),
-                //     fit: BoxFit.cover),
-                color: Colors.black87),
+            decoration: const BoxDecoration(color: Colors.black87),
           ),
           SafeArea(
             child: GetBuilder<QuizController>(
@@ -75,8 +64,7 @@ class QuizView extends GetView<QuizController> {
                   const SizedBox(
                     height: 15,
                   ),
-                  SizedBox(
-                    height: 450,
+                  Expanded(
                     child: PageView.builder(
                       scrollDirection: Axis.horizontal,
                       physics: const NeverScrollableScrollPhysics(),
@@ -86,13 +74,6 @@ class QuizView extends GetView<QuizController> {
                       controller: controller.pageController,
                       itemCount: controller.questionsList.length,
                     ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Image.asset(
-                    "assets/images/shf.png",
-                    height: 250,
                   ),
                 ],
               ),

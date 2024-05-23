@@ -15,6 +15,8 @@ abstract class Routes {
   static const IDGHAM = _Paths.IDGHAM;
   static const QUIZ = _Paths.QUIZ;
   static const RESULT = _Paths.RESULT;
+  static const LOGIN = _Paths.LOGIN;
+  static const SCORE = _Paths.SCORE;
 }
 
 abstract class _Paths {
@@ -31,4 +33,6 @@ abstract class _Paths {
   static const IDGHAM = '/idgham';
   static const QUIZ = '/quiz';
   static const RESULT = '/result';
+  static const LOGIN = '/login';
+  static const SCORE = '/score';
 }
