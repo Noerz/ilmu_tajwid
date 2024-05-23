@@ -5,108 +5,110 @@ import 'package:get/get.dart';
 import 'package:ilmu_tajwid/app/data/models/question_model.dart';
 import 'package:ilmu_tajwid/app/routes/app_pages.dart';
 
-class QuizController extends GetxController{
+class QuizController extends GetxController {
   String name = '';
- //question variables
+  //question variables
   int get countOfQuestion => _questionsList.length;
   final List<QuestionModel> _questionsList = [
     QuestionModel(
-      id: 1,
-      question:
-          "Best Channel for Flutter ",
-      answer: 2,
-      options: ['Sec it', 'Sec it developer', 'sec it developers', 'mesh sec it '],
-    ),
+        id: 1,
+        question: "Apa nama hukum dari potongan ayat diatas ?",
+        answer: 2,
+        options: [
+          'Idgham Mimi',
+          'Idgham Bighunnah',
+          'Idgham Mutamatsilain',
+          'Idgham Bilaghunnah '
+        ],
+        image: 'assets/test.png'),
     QuestionModel(
-      id: 2,
-      question: "Best State Mangment Ststem is ",
-      answer: 1,
-      options: ['BloC', 'GetX', 'Provider', 'riverPod'],
-    ),
+        id: 2,
+        question: "Manakah yang termasuk contoh ikfa syafawi ?",
+        answer: 1,
+        options: [
+          'أَنْعَمْتَ',
+          'هُمْ بِذَلِكَ ',
+          'هُمْ فِيْهَا',
+          'لَهُمْ مَثَلاً'
+        ],
+        image: null),
     QuestionModel(
-      id: 3,
-      question: "Best Flutter dev",
-      answer: 2,
-      options: ['sherif', 'sherif ahmed', 'ahmed sherif', 'doc sherif'],
-    ),
+        id: 3,
+        question: "Huruf ikfa syafawi ada satu yaitu ?",
+        answer: 2,
+        options: ['ن', 'م', 'ت', 'ب'],
+        image: null),
     QuestionModel(
-      id: 4,
-      question: "Sherif is",
-      answer: 1,
-      options: ['eng', 'Doc', 'eng/Doc', 'Doc/Eng'],
-    ),
+        id: 4,
+        question: "Sherif is",
+        answer: 1,
+        options: ['eng', 'Doc', 'eng/Doc', 'Doc/Eng'],
+        image: 'test.png'),
     QuestionModel(
-      id: 5,
-      question:
-          "Best Rapper in Egypt",
-      answer: 3,
-      options: ['Eljoker', 'Abyu', 'R3', 'All of the above'],
-    ),
+        id: 5,
+        question: "Best Rapper in Egypt",
+        answer: 3,
+        options: ['Eljoker', 'Abyu', 'R3', 'All of the above'],
+        image: 'test.png'),
     QuestionModel(
-      id: 6,
-      question: "Real Name of ahmed sherif",
-      answer: 2,
-      options: ['ahmed sherif', 'sherif', 'Haytham', 'NONE OF ABOVE'],
-    ),
+        id: 6,
+        question: "Real Name of ahmed sherif",
+        answer: 2,
+        options: ['ahmed sherif', 'sherif', 'Haytham', 'NONE OF ABOVE'],
+        image: 'test.png'),
     QuestionModel(
-      id: 7,
-      question: "Sherif love",
-      answer: 3,
-      options: ['Pharma', 'Micro', 'Medicnal', 'NONE OF ABOVE'],
-    ),
+        id: 7,
+        question: "Sherif love",
+        answer: 3,
+        options: ['Pharma', 'Micro', 'Medicnal', 'NONE OF ABOVE'],
+        image: 'test.png'),
     QuestionModel(
-      id: 8,
-      question: "hello",
-      answer: 3,
-      options: ['hello', 'hi', 'hola', 'Suiiiiiiiiiiii'],
-    ),
+        id: 8,
+        question: "hello",
+        answer: 3,
+        options: ['hello', 'hi', 'hola', 'Suiiiiiiiiiiii'],
+        image: 'test.png'),
     QuestionModel(
-      id: 9,
-      question:
-      "Best Channel for Flutter ",
-      answer: 2,
-      options: ['Sec it', 'Sec it developer', 'sec it developers', 'mesh sec it '],
-    ),
+        id: 9,
+        question: "Best Channel for Flutter ",
+        answer: 2,
+        options: [
+          'Sec it',
+          'Sec it developer',
+          'sec it developers',
+          'mesh sec it '
+        ],
+        image: 'assets/test.png'),
     QuestionModel(
-      id: 10,
-      question: "Best State Mangment Ststem is ",
-      answer: 1,
-      options: ['BloC', 'GetX', 'Provider', 'riverPod'],
-    ),
+        id: 10,
+        question: "Best State Mangment Ststem is ",
+        answer: 1,
+        options: ['BloC', 'GetX', 'Provider', 'riverPod'],
+        image: 'test.png'),
   ];
 
   List<QuestionModel> get questionsList => [..._questionsList];
 
-
   bool _isPressed = false;
-
 
   bool get isPressed => _isPressed; //To check if the answer is pressed
 
-
   double _numberOfQuestion = 1;
-
 
   double get numberOfQuestion => _numberOfQuestion;
 
-
   int? _selectAnswer;
-
 
   int? get selectAnswer => _selectAnswer;
 
-
   int? _correctAnswer;
 
-
   int _countOfCorrectAnswers = 0;
-
 
   int get countOfCorrectAnswers => _countOfCorrectAnswers;
 
   //map for check if the question has been answered
   final Map<int, bool> _questionIsAnswerd = {};
-
 
   //page view controller
   late PageController pageController;
@@ -114,12 +116,9 @@ class QuizController extends GetxController{
   //timer
   Timer? _timer;
 
-
   final maxSec = 15;
 
-
   final RxInt _sec = 15.obs;
-
 
   RxInt get sec => _sec;
 
@@ -153,7 +152,8 @@ class QuizController extends GetxController{
     }
     stopTimer();
     _questionIsAnswerd.update(questionModel.id, (value) => true);
-    Future.delayed(const Duration(milliseconds: 500)).then((value) => nextQuestion());
+    Future.delayed(const Duration(milliseconds: 500))
+        .then((value) => nextQuestion());
     update();
   }
 

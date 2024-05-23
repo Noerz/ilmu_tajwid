@@ -100,7 +100,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.SCORE,
-      page: () =>  ScoreView(),
+      page: () => ScoreView(),
       binding: ScoreBinding(),
     ),
   ];

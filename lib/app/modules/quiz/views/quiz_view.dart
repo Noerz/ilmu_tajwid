@@ -29,7 +29,7 @@ class QuizView extends GetView<QuizController> {
                       children: [
                         RichText(
                           text: TextSpan(
-                              text: 'Question ',
+                              text: 'Question',
                               style: Theme.of(context)
                                   .textTheme
                                   .headline4!
