@@ -24,7 +24,7 @@ class QuizController extends GetxController {
     QuestionModel(
         id: 2,
         question: "Manakah yang termasuk contoh ikfa syafawi ?",
-        answer: 1,
+        answer: 2,
         options: [
           'أَنْعَمْتَ',
           'هُمْ بِذَلِكَ ',
@@ -35,56 +35,200 @@ class QuizController extends GetxController {
     QuestionModel(
         id: 3,
         question: "Huruf ikfa syafawi ada satu yaitu ?",
-        answer: 2,
-        options: ['ن', 'م', 'ت', 'ب'],
+        answer: 4,
+        options: [
+          'ن',
+          'م',
+          'ت',
+          'ب',
+        ],
         image: null),
     QuestionModel(
         id: 4,
-        question: "Sherif is",
-        answer: 1,
-        options: ['eng', 'Doc', 'eng/Doc', 'Doc/Eng'],
-        image: 'test.png'),
+        question: "Apa nama hukum dari potongan ayat diatas ?",
+        answer: 4,
+        options: [
+          'Izhar Halqi',
+          'Ikhfa Haqiqi',
+          'Izhar Syafawi',
+          'Ikhfa Syafawi'
+        ],
+        image: 'assets/quiz2.png'),
     QuestionModel(
         id: 5,
-        question: "Best Rapper in Egypt",
-        answer: 3,
-        options: ['Eljoker', 'Abyu', 'R3', 'All of the above'],
-        image: 'test.png'),
+        question: "Berikut ini merupakan huruf idghom bighunnah, kecuali ?",
+        answer: 4,
+        options: [
+          'ي',
+          ' و',
+          'ن',
+          'ب',
+        ],
+        image: null),
     QuestionModel(
         id: 6,
-        question: "Real Name of ahmed sherif",
-        answer: 2,
-        options: ['ahmed sherif', 'sherif', 'Haytham', 'NONE OF ABOVE'],
-        image: 'test.png'),
+        question: 'Yang dinamakan dengan iqlab ialah ?',
+        answer: 4,
+        options: [
+          'Nun sukun atau tanwin bertemu dg ي _ م _ ن _ و',
+          'Nun sukun atau tanwin bertemu ا _ ح _ خ _ ع _ غ _ ء',
+          'Nun sukun atau tanwin bertemu ا _ ر',
+          'Nun sukun atau tanwin bertemu ب',
+        ],
+        image: null),
     QuestionModel(
         id: 7,
-        question: "Sherif love",
+        question: "Yang dimaksud idghom mutamasilain (idghom mimi) ialah ?",
         answer: 3,
-        options: ['Pharma', 'Micro', 'Medicnal', 'NONE OF ABOVE'],
-        image: 'test.png'),
+        options: [
+          'mim mati menghadapi huruf hijaiyah  selain م dan ب',
+          'mim mati menghadapi ب',
+          'mim mati menghadapi م',
+          'mim mati menghadapi ن',
+        ],
+        image: null),
     QuestionModel(
         id: 8,
-        question: "hello",
-        answer: 3,
-        options: ['hello', 'hi', 'hola', 'Suiiiiiiiiiiii'],
-        image: 'test.png'),
+        question:
+            "Ada berapa huruf hijaiyah hukum bacaan ikhfa haqiqi dalam nun mati/tanwin ?",
+        answer: 1,
+        options: ['15', '2', '4', '6'],
+        image: null),
     QuestionModel(
         id: 9,
-        question: "Best Channel for Flutter ",
+        question: "Kalimat مِنْ رَبِّهِمْ merupakan contoh hukum ?",
         answer: 2,
         options: [
-          'Sec it',
-          'Sec it developer',
-          'sec it developers',
-          'mesh sec it '
+          'idghom bighunnah',
+          'idghom bilaghunnah',
+          'ikhfa',
+          'izhar',
         ],
-        image: 'assets/test.png'),
+        image: null),
     QuestionModel(
         id: 10,
-        question: "Best State Mangment Ststem is ",
+        question:
+            "Dalam hukum bacaan nun mati/tanwin huruf lam dan ro termasuk apa ? ",
+        answer: 4,
+        options: [
+          'izhar',
+          'Iqlab',
+          'Idghom bighunnah',
+          'Idghom bilaghunnah',
+        ],
+        image: null),
+    QuestionModel(
+        id: 11,
+        question: "Yang termasuk huruf idghom ialah ?",
+        answer: 3,
+        options: [
+          'و ف ق',
+          'س ش ص',
+          'ي ن م',
+          'ل ر ز',
+        ],
+        image: null),
+    QuestionModel(
+        id: 12,
+        question: "Hukum nun sukun pada kata مِنْ بَعْدِ adalah",
+        answer: 2,
+        options: [
+          'idzhar',
+          'Iqlab',
+          'Idghom',
+          'Ikhfa',
+        ],
+        image: null),
+    QuestionModel(
+        id: 13,
+        question: "Hukum Berikut ini merupakan contoh izhar ? ",
+        answer: 2,
+        options: [
+          'مَنْ يَقُوْلُ',
+          'مِنْ خَوْفٍ',
+          'مِنْ بَعْدِ',
+          'مِنْ قَبْلِك',
+        ],
+        image: null),
+    QuestionModel(
+        id: 14,
+        question: "Hukum membaca Al-Qur’an dengan ilmu tajwid adalah ?",
         answer: 1,
-        options: ['BloC', 'GetX', 'Provider', 'riverPod'],
-        image: 'test.png'),
+        options: [
+          'Wajin',
+          'Makruh',
+          'Mubah',
+          'Sunnah',
+        ],
+        image: null),
+    QuestionModel(
+        id: 15,
+        question: "Yang dinamakan dengan iqlab ialah ?",
+        answer: 4,
+        options: [
+          'Nun sukun atau tanwin bertemu dg ي _ م _ ن _ و',
+          'Nun sukun atau tanwin bertemu ا _ ح _ خ _ ع _ غ _ ء',
+          'Nun sukun atau tanwin bertemu ا _ ر',
+          'Nun sukun atau tanwin bertemu ب',
+        ],
+        image: null),
+    QuestionModel(
+        id: 16,
+        question: "Apa nama hukum dari potongan ayat diatas ? ",
+        answer: 3,
+        options: [
+          'Idgham mimi',
+          'Idgham bilaghunnah',
+          'Idgham mutajanisain',
+          'Idgham mutaqaribain',
+        ],
+        image: 'assets/quiz16.png'),
+    QuestionModel(
+        id: 17,
+        question:
+            "Hukum bacaan izhar Syafawi pada nun mati/tanwin ada berapa huruf ?",
+        answer: 1,
+        options: [
+          '26',
+          '1',
+          '4',
+          '6',
+        ],
+        image: null),
+    QuestionModel(
+        id: 18,
+        question:
+            "Hukum bacaan izhar Halqi pada nun mati/tanwin ada berapa huruf ?",
+        answer: 4,
+        options: [
+          '2',
+          '1',
+          '4',
+          '6',
+        ],
+        image: null),
+    QuestionModel(
+        id: 19,
+        question: "Ada berapa hukum bacaan nun mati/tanwin ?",
+        answer: 3,
+        options: [
+          '3',
+          '5',
+          '6',
+          '2',
+        ],
+        image: null),
+    QuestionModel(
+        id: 20,
+        question: "Yang dinamakan ikhfa’ ialah ? ",
+        answer: 4,
+        options: [
+          'Nun sukun atau tanwin bertemu dg 10 huruf',
+          'Nun sukun atau tanwin bertemu dg 12 huruf',
+          'Nun sukun atau tanwin bertemu dg 14 huruf',
+          'Nun sukun atau tanwin bertemu dg 15 huruf',
+        ],
+        image: null),
   ];
 
   List<QuestionModel> get questionsList => [..._questionsList];
