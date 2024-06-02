@@ -64,13 +64,6 @@ class HomeView extends GetView<HomeController> {
             title: 'Keluar',
             navigation: () {
               // Keluar dari aplikasi
-              Get.offAll(MenuView()); // Pergi ke halaman menu
-              SystemNavigator.pop(); // Keluar dari aplikasi
-            },
-          ),
-          ActionButton(
-            text: "keluar",
-            onPressed: () {
               Get.defaultDialog(
                 title: 'Konfirmasi Logout',
                 middleText: 'Apakah Anda yakin untuk logout',
