@@ -6,8 +6,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class ScoreView extends GetView<ScoreController> {
-
-   ScoreView({Key? key,}) : super(key: key);
+  ScoreView({Key? key,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,28 +15,50 @@ class ScoreView extends GetView<ScoreController> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Scores'),
+        title: Text('Scores', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+        centerTitle: true,
+        elevation: 0,
+        backgroundColor: Colors.white,
       ),
       body: Obx(() {
         if (controller.isLoading.value) {
-          return Center(child: CircularProgressIndicator());
+          return Center(child: CircularProgressIndicator.adaptive());
         }
 
         if (controller.errorMessage.isNotEmpty) {
-          return Center(child: Text('Error: ${controller.errorMessage.value}'));
+          return Center(
+            child: Text(
+              'Error: ${controller.errorMessage.value}',
+              style: TextStyle(fontSize: 18, color: Colors.red),
+            ),
+          );
         }
 
         if (controller.scores.isEmpty) {
-          return Center(child: Text('No scores found'));
+          return Center(
+            child: Text(
+              'No scores found',
+              style: TextStyle(fontSize: 18, color: Colors.grey),
+            ),
+          );
         }
 
         return ListView.builder(
           itemCount: controller.scores.length,
           itemBuilder: (context, index) {
             final score = controller.scores[index];
-            return ListTile(
-              title: Text('Score: ${score.nilai}'),
-              subtitle: Text('Grade: ${score.grade}\nDate: ${score.waktu}'),
+            return Card(
+              margin: EdgeInsets.all(16),
+              child: ListTile(
+                title: Text(
+                  'Nilai: ${score.nilai}',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                subtitle: Text(
+                  'Grade: ${score.grade}\n Tanggal: ${score.waktu}',
+                  style: TextStyle(fontSize: 16),
+                ),
+              ),
             );
           },
         );

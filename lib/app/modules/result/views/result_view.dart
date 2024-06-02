@@ -1,12 +1,34 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
+import 'package:ilmu_tajwid/app/core/consts/keys.dart';
+import 'package:ilmu_tajwid/app/data/repositories/score/score_repository.dart';
 import 'package:ilmu_tajwid/app/modules/quiz/controllers/quiz_controller.dart';
-
 import '../controllers/result_controller.dart';
 
 class ResultView extends GetView<ResultController> {
-  const ResultView({Key? key}) : super(key: key);
+  final ScoreRepository _scoreRepository = Get.find<ScoreRepository>();
+  final _secureStorage = Get.find<FlutterSecureStorage>();
+
+  String _getCurrentDateTime() {
+    final now = DateTime.now();
+    return "${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}-${now.year}";
+  }
+
+  String _getGrade(double score) {
+    // implement your logic to get the grade based on the score
+    // for example:
+    if (score >= 90) {
+      return "A";
+    } else if (score >= 80) {
+      return "B";
+    } else if (score >= 70) {
+      return "C";
+    } else {
+      return "D";
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,8 +74,26 @@ class ResultView extends GetView<ResultController> {
                   height: 30,
                 ),
                 ElevatedButton(
-                    onPressed: () => controller.startAgain(),
-                    child: Text("Mulai Kembali"))
+                  onPressed: () async {
+                    final scoreResult = controller.scoreResult;
+                    final userId =
+                        await _secureStorage.read(key: Keys.id) ?? '';
+                    final inputScoreResult = await _scoreRepository.inputScore(
+                      user_id: userId,
+                      nilai: scoreResult.toString(),
+                      grade: _getGrade(scoreResult),
+                      waktu: _getCurrentDateTime(),
+                    );
+                    if (inputScoreResult['status'] == 'success') {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text("Terjadi Kesalahan")),
+                      );
+                    } else {
+                      controller.startAgain();
+                    }
+                  },
+                  child: Text("Mulai Kembali"),
+                ),
               ],
             ),
           ),

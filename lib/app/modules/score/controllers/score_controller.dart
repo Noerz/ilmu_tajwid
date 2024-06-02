@@ -28,7 +28,7 @@ class ScoreController extends GetxController {
   Future<void> fetchScores() async {
     final tempUserId = await _secureStorage.read(key: Keys.id) ?? '';
     final token = await _secureStorage.read(key: Keys.token);
-      print("isi dari token $token");
+    print("isi dari token $token");
     try {
       isLoading(true);
       var fetchedScores =
@@ -38,6 +38,34 @@ class ScoreController extends GetxController {
       errorMessage(e.toString());
     } finally {
       isLoading(false);
+    }
+  }
+
+  Future<Map<String, dynamic>> inputScore({
+    required String user_id,
+    required String nilai,
+    required String grade,
+    required String waktu,
+  }) async {
+    try {
+      // step 1: Hit API register
+      await _scoreRepository.inputScore(
+        user_id: user_id,
+        nilai: nilai,
+        grade: grade,
+        waktu: waktu,
+      );
+
+      // step 3: Return
+      return {
+        'success': true,
+        'message': 'Input Score success',
+      };
+    } catch (_) {
+      return {
+        'success': false,
+        'message': 'Input Score failed. Please try again.',
+      };
     }
   }
 }
