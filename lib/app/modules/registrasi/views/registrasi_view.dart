@@ -5,11 +5,11 @@ import 'package:ilmu_tajwid/app/core/theme/style.dart';
 import 'package:ilmu_tajwid/app/core/utils/promt_utils.dart';
 import 'package:ilmu_tajwid/app/global_widgets/action_button.dart';
 import 'package:ilmu_tajwid/app/global_widgets/custom_textfield.dart';
-import 'package:ilmu_tajwid/app/modules/registrasi/views/registrasi_view.dart';
-import '../controllers/login_controller.dart';
 
-class LoginView extends GetView<LoginController> {
-  const LoginView({super.key});
+import '../controllers/registrasi_controller.dart';
+
+class RegistrasiView extends GetView<RegistrasiController> {
+  const RegistrasiView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +36,7 @@ class LoginView extends GetView<LoginController> {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      'Masuk atau buat akun ',
+                      'Buat Akun Baru',
                       textAlign: TextAlign.center,
                       style: subtle.copyWith(
                         color: CustomColors.wireframe700,
@@ -48,6 +48,13 @@ class LoginView extends GetView<LoginController> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          CustomTextfield(
+                            controller: controller.nameController,
+                            focusNode: controller.nameFocusNode,
+                            labelText: 'Nama',
+                            hintText: 'Nama',
+                          ),
+                          const SizedBox(height: 16),
                           CustomTextfield(
                             controller: controller.emailController,
                             focusNode: controller.emailFocusNode,
@@ -94,17 +101,7 @@ class LoginView extends GetView<LoginController> {
                             );
                           }),
                           const SizedBox(height: 4),
-                          GestureDetector(
-                            onTap: () {
-                              Get.toNamed('/registrasi');
-                            },
-                            child: Text(
-                              'Buat Akun',
-                              style: subtle.copyWith(
-                                color: CustomColors.wireframe400,
-                              ),
-                            ),
-                          ),
+                          
                         ],
                       ),
                     ),
@@ -114,16 +111,17 @@ class LoginView extends GetView<LoginController> {
                         horizontal: 20,
                       ),
                       child: ActionButton(
-                        text: 'Login',
+                        text: 'Registrasi',
                         onPressed: () async {
                           // Validasi form terlebih dahulu
                           if (controller.formKey.currentState?.validate() ??
-                              true) {
+                              false) {
                             // step 1: Tampilkan widget loading
                             PromptUtils.showLoading();
 
                             // step 2: Jalankan usecase
-                            final result = await controller.loginWithEmail(
+                            final result = await controller.register(
+                              name: controller.nameController.text,
                               email: controller.emailController.text,
                               password: controller.passwordController.text,
                             );
@@ -135,11 +133,11 @@ class LoginView extends GetView<LoginController> {
                             if (result['success']) {
                               // kondisi: Success
 
-                              Get.offAllNamed('/home');
+                              Get.offAllNamed('/login');
                             } else {
                               // kondisi: Error
                               Get.snackbar(
-                                'Login gagal',
+                                'Registrasi gagal',
                                 result['message'],
                               );
                             }

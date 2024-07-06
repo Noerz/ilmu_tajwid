@@ -42,7 +42,7 @@ Future<User> login({
 
   @override
   Future<Map<String, dynamic>> register({
-    required String fullName,
+    required String name,
     required String email,
     required String password,
   }) async {
@@ -50,7 +50,7 @@ Future<User> login({
       final response = await client.post(
         Endpoints.register,
         data: {
-          'fullName': fullName,
+          'name': name,
           'email': email,
           'password': password,
         },

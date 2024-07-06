@@ -30,10 +30,11 @@ class CustomButton extends StatelessWidget {
         child: TextButton(
           onPressed: navigation,
           child: Text(
+            textAlign: TextAlign.center,
             title,
             style: TextStyle(
               color: Colors.white,
-              fontSize: 16,
+              fontSize: 15,
             ),
           ),
         ),

@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:ilmu_tajwid/app/core/values/app_text.dart';
 import 'package:ilmu_tajwid/app/global_widgets/button_widget.dart';
+import 'package:ilmu_tajwid/app/modules/Idgham/views/idgham_Bilaghunnah_view.dart';
 import 'package:ilmu_tajwid/app/routes/app_pages.dart';
 
 import '../controllers/idgham_controller.dart';
@@ -48,7 +49,7 @@ class IdghamView extends GetView<IdghamController> {
                           color: Colors.blue,
                           title: 'Idgham Bighunnah',
                           navigation: () {
-                            Get.toNamed(Routes.HAQIQI); // Pindah ke halaman menu
+                            Get.toNamed(Routes.IdghamBighunnah); // Pindah ke halaman menu
                           },
                         ),
                         CustomButton(
@@ -56,7 +57,7 @@ class IdghamView extends GetView<IdghamController> {
                           title: 'Idgham Mimi',
                           navigation: () {
                             Get.toNamed(
-                                Routes.IKHFA_SYAFAWI); // Pindah ke halaman menu
+                                Routes.IdghamMimi); // Pindah ke halaman menu
                           },
                         ),
                         CustomButton(
@@ -64,7 +65,7 @@ class IdghamView extends GetView<IdghamController> {
                           title: 'Idgham Mutaqaribain',
                           navigation: () {
                             Get.toNamed(
-                                Routes.IKHFA_SYAFAWI); // Pindah ke halaman menu
+                                Routes.IdghamMutaqaribain); // Pindah ke halaman menu
                           },
                         ),
                       ],
@@ -75,25 +76,25 @@ class IdghamView extends GetView<IdghamController> {
                       children: [
                         CustomButton(
                           color: Colors.blue,
-                          title: 'Idgham Bighunnah',
+                          title: 'Idgham Bilaghunnah',
                           navigation: () {
-                            Get.toNamed(Routes.HAQIQI); // Pindah ke halaman menu
+                            Get.to(IdghamBilaghunnah()); // Pindah ke halaman menu
                           },
                         ),
                         CustomButton(
                           color: Colors.blue,
-                          title: 'Idgham Mimi',
+                          title: 'Idgham Mutamatsilain',
                           navigation: () {
                             Get.toNamed(
-                                Routes.IKHFA_SYAFAWI); // Pindah ke halaman menu
+                                Routes.IdghamMutamatsilain); // Pindah ke halaman menu
                           },
                         ),
                         CustomButton(
                           color: Colors.blue,
-                          title: 'Idgham Mutaqaribain',
+                          title: 'Idgham Mutajanisain',
                           navigation: () {
                             Get.toNamed(
-                                Routes.IKHFA_SYAFAWI); // Pindah ke halaman menu
+                                Routes.IdghamMutajanisain); // Pindah ke halaman menu
                           },
                         ),
                       ],

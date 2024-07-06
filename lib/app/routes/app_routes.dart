@@ -13,10 +13,16 @@ abstract class Routes {
   static const HAQIQI = _Paths.HAQIQI;
   static const IQLAB = _Paths.IQLAB;
   static const IDGHAM = _Paths.IDGHAM;
+  static const IdghamBighunnah = _Paths.IdghamBighunnah;
+  static const IdghamMimi = _Paths.IdghamMimi;
+  static const IdghamMutamatsilain = _Paths.IdghamMutamatsilain;
+  static const IdghamMutaqaribain = _Paths.IdghamMutaqaribain;
+  static const IdghamMutajanisain = _Paths.IdghamMutajanisain;
   static const QUIZ = _Paths.QUIZ;
   static const RESULT = _Paths.RESULT;
   static const LOGIN = _Paths.LOGIN;
   static const SCORE = _Paths.SCORE;
+  static const REGISTRASI = _Paths.REGISTRASI;
 }
 
 abstract class _Paths {
@@ -31,8 +37,14 @@ abstract class _Paths {
   static const HAQIQI = '/haqiqi';
   static const IQLAB = '/iqlab';
   static const IDGHAM = '/idgham';
+  static const IdghamBighunnah = '/IdghamBighunnah';
+  static const IdghamMimi = '/IdghamMimi';
+  static const IdghamMutamatsilain = '/IdghamMutamatsilain';
+  static const IdghamMutaqaribain = '/IdghamMutaqaribain';
+  static const IdghamMutajanisain = '/IdghamMutajanisain';
   static const QUIZ = '/quiz';
   static const RESULT = '/result';
   static const LOGIN = '/login';
   static const SCORE = '/score';
+  static const REGISTRASI = '/registrasi';
 }

@@ -41,19 +41,19 @@ class QuizView extends GetView<QuizController> {
                                         .toString(),
                                     style: Theme.of(context)
                                         .textTheme
-                                        .headline4!
+                                        .bodyMedium!
                                         .copyWith(color: Colors.white)),
                                 TextSpan(
                                     text: '/',
                                     style: Theme.of(context)
                                         .textTheme
-                                        .headline5!
+                                        .bodySmall!
                                         .copyWith(color: Colors.white)),
                                 TextSpan(
                                     text: controller.countOfQuestion.toString(),
                                     style: Theme.of(context)
                                         .textTheme
-                                        .headline5!
+                                        .bodySmall!
                                         .copyWith(color: Colors.white)),
                               ]),
                         ),

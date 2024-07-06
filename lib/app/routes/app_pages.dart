@@ -1,6 +1,11 @@
 import 'package:get/get.dart';
+import 'package:ilmu_tajwid/app/modules/Idgham/views/idgham_mimi.dart';
+import 'package:ilmu_tajwid/app/modules/Idgham/views/idgham_mutajanisain.dart';
+import 'package:ilmu_tajwid/app/modules/Idgham/views/idgham_mutamatsilain.dart';
+import 'package:ilmu_tajwid/app/modules/Idgham/views/idgham_mutaqaribain.dart';
 
 import '../modules/Idgham/bindings/idgham_binding.dart';
+import '../modules/Idgham/views/idgham_bighunnah_view.dart';
 import '../modules/Idgham/views/idgham_view.dart';
 import '../modules/Ikhfa/bindings/ikhfa_binding.dart';
 import '../modules/Ikhfa/views/ikhfa_haqiqi_view.dart';
@@ -20,6 +25,8 @@ import '../modules/menu/bindings/menu_binding.dart';
 import '../modules/menu/views/menu_view.dart';
 import '../modules/quiz/bindings/quiz_binding.dart';
 import '../modules/quiz/views/quiz_view.dart';
+import '../modules/registrasi/bindings/registrasi_binding.dart';
+import '../modules/registrasi/views/registrasi_view.dart';
 import '../modules/result/bindings/result_binding.dart';
 import '../modules/result/views/result_view.dart';
 import '../modules/score/bindings/score_binding.dart';
@@ -84,13 +91,38 @@ class AppPages {
       binding: IdghamBinding(),
     ),
     GetPage(
+      name: _Paths.IdghamBighunnah,
+      page: () => const IdghamBighunnah(),
+      binding: IdghamBinding(),
+    ),
+    GetPage(
+      name: _Paths.IdghamMimi,
+      page: () => const IdghamMimi(),
+      binding: IdghamBinding(),
+    ),
+    GetPage(
+      name: _Paths.IdghamMutamatsilain,
+      page: () => const IdghamMutamatsilain(),
+      binding: IdghamBinding(),
+    ),
+    GetPage(
+      name: _Paths.IdghamMutaqaribain,
+      page: () => const IdghamMutaqaribain(),
+      binding: IdghamBinding(),
+    ),
+    GetPage(
+      name: _Paths.IdghamMutajanisain,
+      page: () => const IdghamMutajanisain(),
+      binding: IdghamBinding(),
+    ),
+    GetPage(
       name: _Paths.QUIZ,
       page: () => const QuizView(),
       binding: QuizBinding(),
     ),
     GetPage(
       name: _Paths.RESULT,
-      page: () =>  ResultView(),
+      page: () => ResultView(),
       binding: ResultBinding(),
     ),
     GetPage(
@@ -102,6 +134,11 @@ class AppPages {
       name: _Paths.SCORE,
       page: () => ScoreView(),
       binding: ScoreBinding(),
+    ),
+    GetPage(
+      name: _Paths.REGISTRASI,
+      page: () => const RegistrasiView(),
+      binding: RegistrasiBinding(),
     ),
   ];
 }

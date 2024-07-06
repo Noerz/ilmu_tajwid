@@ -36,15 +36,15 @@ class ActionButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(6),
           ),
           backgroundColor: type == ActionButtonType.secondary
-              ? CustomColors.wireframe300
-              : CustomColors.wireframe800,
+              ? Color.fromARGB(255, 14, 53, 230)
+              : const Color.fromARGB(255, 12, 102, 248),
         ),
         onPressed: onPressed,
         child: Text(
           text,
           style: bodyMedium.copyWith(
             color: type == ActionButtonType.secondary
-                ? CustomColors.wireframe800
+                ? Colors.white
                 : Colors.white,
           ),
         ),

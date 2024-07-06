@@ -116,15 +116,14 @@ class AuthController extends GetxController {
   }
 
   Future<Map<String, dynamic>> register({
-    required String fullName,
+    required String name,
     required String email,
-    required String phoneNumber,
     required String password,
   }) async {
     try {
       // step 1: Hit API register
       await _authRepository.register(
-        fullName: fullName,
+        name: name,
         email: email,
         password: password,
       );

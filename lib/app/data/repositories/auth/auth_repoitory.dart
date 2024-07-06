@@ -7,7 +7,7 @@ abstract class AuthRepository {
   });
 
   Future<Map<String, dynamic>> register({
-    required String fullName,
+    required String name,
     required String email,
     required String password,
   });
